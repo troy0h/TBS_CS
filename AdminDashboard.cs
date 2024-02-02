@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace TBS_CS
 {
-    public partial class TaxiMenu : Form
+    public partial class AdminDashboard : Form
     {
-        public TaxiMenu()
+        public AdminDashboard()
         {
             InitializeComponent();
-        }
-
-        private void LogIn_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
