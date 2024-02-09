@@ -19,7 +19,21 @@ namespace TBS_CS
 
         private void LogIn_Click(object sender, EventArgs e)
         {
+            Form form = new LogIn();
+            this.Hide();
+            form.Show();
+        }
 
+        private void Register_Click(object sender, EventArgs e)
+        {
+            Form form = new Register();
+            this.Hide();
+            form.Show();
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
