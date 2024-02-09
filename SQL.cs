@@ -7,10 +7,9 @@ namespace TBS_CS
 {
     internal class SQL
     {
-
         ///<summary>
         ///Create the database tables. 
-        ///Will always run on start
+        ///Will always run on start, if it doesn't exist
         ///</summary>
         public static void CreateTables()
         {
@@ -25,13 +24,15 @@ namespace TBS_CS
                         password text NOT NULL,
                         name text NOT NULL,
                         phoneNum text NOT NULL,
-                        userType text NOT NULL";
+                        userType text NOT NULL
+                        );";
 
                 SqliteCommand carsTable = connection.CreateCommand();
                 carsTable.CommandText = @"
                         CREATE TABLE IF NOT EXISTS cars (
                         carId integer PRIMARY KEY,
-                        licenseNumber integer NOT NULL";
+                        licenseNumber integer NOT NULL
+                        );";
 
                 SqliteCommand tripsTable = connection.CreateCommand();
                 tripsTable.CommandText = @"
@@ -43,19 +44,14 @@ namespace TBS_CS
                         customerID integer NOT NULL,
                         driverID integer,
                         carID integer,
-                        FOREIGN KEY (customerID) REFERENCES customers(userId),
-                        FOREIGN KEY (driverID) REFERENCES drivers(userID),
+                        FOREIGN KEY (customerID) REFERENCES users(userId),
+                        FOREIGN KEY (driverID) REFERENCES users(userID),
                         FOREIGN KEY (carID) REFERENCES cars(carID)
-                    );";
+                        );";
 
-                using (TransactionScope transaction = new())
-                {
-                    // Create tables, make sure all commands succeeded
-                    usersTable.ExecuteNonQuery();
-                    carsTable.ExecuteNonQuery();
-                    tripsTable.ExecuteNonQuery();
-                    transaction.Complete();
-                }
+                usersTable.ExecuteNonQuery();
+                carsTable.ExecuteNonQuery();
+                tripsTable.ExecuteNonQuery();
                 connection.Close();
             }
             return;
@@ -75,7 +71,7 @@ namespace TBS_CS
                 connection.Open();
                 SqliteCommand checkUser = connection.CreateCommand();
                 // Check if username is already in use
-                checkUser.CommandText = @"SELECT username FROM users WHERE username = @user";
+                checkUser.CommandText = @"SELECT username FROM users WHERE username = @user;";
                 checkUser.Parameters.AddWithValue("@user", username);
                 SqliteDataReader reader = checkUser.ExecuteReader();
                 while (reader.Read())
@@ -86,7 +82,7 @@ namespace TBS_CS
                 }
                 // Otherwise, make user
                 SqliteCommand makeUser = connection.CreateCommand();
-                makeUser.CommandText = @"INSERT INTO users (username, password, name, phoneNum, userType) VALUES (@user, @pass, @name, @phone, @type)";
+                makeUser.CommandText = @"INSERT INTO users (username, password, name, phoneNum, userType) VALUES (@user, @pass, @name, @phone, @type);";
                 makeUser.Parameters.AddWithValue("@user", username);
                 makeUser.Parameters.AddWithValue("@pass", passHash);
                 makeUser.Parameters.AddWithValue("@name", name);
@@ -114,7 +110,7 @@ namespace TBS_CS
             {
                 connection.Open();
                 SqliteCommand findUser = connection.CreateCommand();
-                findUser.CommandText = @"SELECT username FROM users WHERE username = @user";
+                findUser.CommandText = @"SELECT username FROM users WHERE username = @user;";
                 findUser.Parameters.AddWithValue("@user", username);
                 SqliteDataReader reader = findUser.ExecuteReader();
                 // If reader.Read = false, meaning no rows found:
@@ -146,15 +142,14 @@ namespace TBS_CS
 
         ///<summary>
         ///Create a new trip. 
-        ///<returns>Returns 1 if unsuccessful, and 0 if successful.</returns>
         ///</summary>
-        public static int CreateTrip(string pickupAddress, string dropoffAddress, string pickupTime, int customerId)
+        public static void CreateTrip(string pickupAddress, string dropoffAddress, string pickupTime, int customerId)
         {
             using (SqliteConnection connection = new SqliteConnection("Data Source=database.db"))
             {
                 connection.Open();
                 SqliteCommand createTrip = connection.CreateCommand();
-                createTrip.CommandText = @"INSERT INTO users (pickupAdd, dropoffAdd, pickupTime, customerId) VALUES (@pickup, @dropoff, @time, @cust)";
+                createTrip.CommandText = @"INSERT INTO users (pickupAdd, dropoffAdd, pickupTime, customerId) VALUES (@pickup, @dropoff, @time, @cust);";
                 createTrip.Parameters.AddWithValue("@pickup", pickupAddress);
                 createTrip.Parameters.AddWithValue("@dropoff", dropoffAddress);
                 createTrip.Parameters.AddWithValue("@time", pickupTime);
@@ -167,20 +162,19 @@ namespace TBS_CS
                 }
                 connection.Close();
             }
-            return 0;
+            return;
         }
 
         ///<summary>
         ///Add a driver to a trip, using the trip and drivers' IDs. 
-        ///<returns>Returns 1 if unsuccessful, and 0 if successful. </returns>
         ///</summary>
-        public static int AddDriverToTrip(int tripId, int driverId)
+        public static void AddDriverToTrip(int tripId, int driverId)
         {
             using (SqliteConnection connection = new SqliteConnection("Data Source=database.db"))
             {
                 connection.Open();
                 SqliteCommand addDriver = connection.CreateCommand();
-                addDriver.CommandText = @"UPDATE trips SET driverId = @driver WHERE tripId = @trip";
+                addDriver.CommandText = @"UPDATE trips SET driverId = @driver WHERE tripId = @trip;";
                 addDriver.Parameters.AddWithValue("@driver", driverId);
                 addDriver.Parameters.AddWithValue("@trip", tripId);
 
@@ -191,16 +185,137 @@ namespace TBS_CS
                 }
                 connection.Close();
             }
-            return 0;
+            return;
         }
 
-        /* TODO: 
-         * Get User Data
-         * Add Cars
-         * Delete Cars
-         * Get Unassigned Trips for Driver
-         * Get Assigned Trips for Driver
-         * Get Trips for User
-        */
+        ///<summary>
+        ///Add a new car
+        ///</summary>
+        public static void AddCar(string license)
+        {
+            using (SqliteConnection connection = new SqliteConnection("Data Source=database.db"))
+            {
+                connection.Open();
+                SqliteCommand addCar = connection.CreateCommand();
+                addCar.CommandText = @"INSERT INTO cars (licenseNumber) VALUES (@license);";
+                addCar.Parameters.AddWithValue("@license", license);
+
+                using (TransactionScope transaction = new())
+                {
+                    addCar.ExecuteNonQuery();
+                    transaction.Complete();
+                }
+                connection.Close();
+            }
+            return;
+        }
+
+        ///<summary>
+        ///Deletes a car, using its license number
+        ///</summary>
+        public static void DeleteCar(string license)
+        {
+            using (SqliteConnection connection = new SqliteConnection("Data Source=database.db"))
+            {
+                connection.Open();
+                SqliteCommand deleteCar = connection.CreateCommand();
+                deleteCar.CommandText = @"DELETE FROM cars WHERE licenseNumber = (@license);";
+                deleteCar.Parameters.AddWithValue("@license", license);
+
+                using (TransactionScope transaction = new())
+                {
+                    deleteCar.ExecuteNonQuery();
+                    transaction.Complete();
+                }
+                connection.Close();
+            }
+            return;
+        }
+
+        public static List<string> GetUnassignedTrips()
+        {
+            using (SqliteConnection connection = new SqliteConnection("Data Source=database.db"))
+            {
+                connection.Open();
+                List<string> toReturn = new();
+                SqliteCommand GetTrips = connection.CreateCommand();
+                GetTrips.CommandText = @"SELECT * FROM trips WHERE driverID IS NULL;";
+                using (TransactionScope transaction = new())
+                {
+                    SqliteDataReader reader = GetTrips.ExecuteReader();
+                    while (reader.Read()) 
+                    {
+                        StringBuilder stringBuilder = new StringBuilder();
+                        stringBuilder.Append(reader.GetString(1));
+                        stringBuilder.Append(", ");
+                        stringBuilder.Append(reader.GetString(2));
+                        stringBuilder.Append(", ");
+                        stringBuilder.Append(reader.GetString(3));
+                        toReturn.Add(stringBuilder.ToString());
+                    }
+                    transaction.Complete();
+                }
+                connection.Close();
+                return toReturn;
+            }
+        }
+
+        public static List<string> GetAssignedTrips(int driverId)
+        {
+            using (SqliteConnection connection = new SqliteConnection("Data Source=database.db"))
+            {
+                connection.Open();
+                List<string> toReturn = new();
+                SqliteCommand GetTrips = connection.CreateCommand();
+                GetTrips.CommandText = @"SELECT * FROM trips WHERE driverID = @driver;";
+                GetTrips.Parameters.AddWithValue("@driver", driverId);
+                using (TransactionScope transaction = new())
+                {
+                    SqliteDataReader reader = GetTrips.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        StringBuilder stringBuilder = new StringBuilder();
+                        stringBuilder.Append(reader.GetString(1));
+                        stringBuilder.Append(", ");
+                        stringBuilder.Append(reader.GetString(2));
+                        stringBuilder.Append(", ");
+                        stringBuilder.Append(reader.GetString(3));
+                        toReturn.Add(stringBuilder.ToString());
+                    }
+                    transaction.Complete();
+                }
+                connection.Close();
+                return toReturn;
+            }
+        }
+
+        public static List<string> GetUserTrips(int userId)
+        {
+            using (SqliteConnection connection = new SqliteConnection("Data Source=database.db"))
+            {
+                connection.Open();
+                List<string> toReturn = new();
+                SqliteCommand GetTrips = connection.CreateCommand();
+                GetTrips.CommandText = @"SELECT * FROM trips WHERE customerID = @user;";
+                GetTrips.Parameters.AddWithValue("@user", userId);
+                using (TransactionScope transaction = new())
+                {
+                    SqliteDataReader reader = GetTrips.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        StringBuilder stringBuilder = new StringBuilder();
+                        stringBuilder.Append(reader.GetString(1));
+                        stringBuilder.Append(", ");
+                        stringBuilder.Append(reader.GetString(2));
+                        stringBuilder.Append(", ");
+                        stringBuilder.Append(reader.GetString(3));
+                        toReturn.Add(stringBuilder.ToString());
+                    }
+                    transaction.Complete();
+                }
+                connection.Close();
+                return toReturn;
+            }
+        }
     }
 }
