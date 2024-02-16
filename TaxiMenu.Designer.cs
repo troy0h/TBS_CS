@@ -57,6 +57,7 @@
             Register.TabIndex = 1;
             Register.Text = "Register";
             Register.UseVisualStyleBackColor = true;
+            Register.Click += Register_Click;
             // 
             // Exit
             // 
@@ -67,6 +68,7 @@
             Exit.TabIndex = 2;
             Exit.Text = "Exit";
             Exit.UseVisualStyleBackColor = true;
+            Exit.Click += Exit_Click;
             // 
             // pictureBox1
             // 

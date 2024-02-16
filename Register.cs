@@ -16,5 +16,13 @@ namespace TBS_CS
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // Take Me Back button
+            Form form = new TaxiMenu();
+            this.Hide();
+            form.Show();
+        }
     }
 }
