@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogIn));
             label6 = new Label();
             button2 = new Button();
             button1 = new Button();
@@ -35,13 +36,15 @@
             label1 = new Label();
             PasswordInput = new TextBox();
             UsernameInput = new TextBox();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Comic Sans MS", 48F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label6.Location = new Point(413, 223);
+            label6.Location = new Point(420, 237);
             label6.Name = "label6";
             label6.Size = new Size(193, 90);
             label6.TabIndex = 25;
@@ -50,7 +53,7 @@
             // button2
             // 
             button2.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(389, 449);
+            button2.Location = new Point(832, 433);
             button2.Name = "button2";
             button2.Size = new Size(80, 80);
             button2.TabIndex = 23;
@@ -60,7 +63,7 @@
             // button1
             // 
             button1.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(531, 449);
+            button1.Location = new Point(808, 183);
             button1.Name = "button1";
             button1.Size = new Size(80, 80);
             button1.TabIndex = 22;
@@ -81,7 +84,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(352, 337);
+            label1.Location = new Point(399, 348);
             label1.Name = "label1";
             label1.Size = new Size(85, 23);
             label1.TabIndex = 17;
@@ -97,16 +100,28 @@
             // 
             // UsernameInput
             // 
-            UsernameInput.Location = new Point(440, 339);
+            UsernameInput.Location = new Point(487, 350);
             UsernameInput.Name = "UsernameInput";
             UsernameInput.Size = new Size(136, 23);
             UsernameInput.TabIndex = 13;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(392, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(240, 222);
+            pictureBox1.TabIndex = 26;
+            pictureBox1.TabStop = false;
             // 
             // LogIn
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1008, 729);
+            Controls.Add(pictureBox1);
             Controls.Add(label6);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -116,6 +131,7 @@
             Controls.Add(UsernameInput);
             Name = "LogIn";
             Text = "LogIn";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -129,5 +145,6 @@
         private Label label1;
         private TextBox PasswordInput;
         private TextBox UsernameInput;
+        private PictureBox pictureBox1;
     }
 }
