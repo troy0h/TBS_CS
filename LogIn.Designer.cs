@@ -43,39 +43,43 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.BackColor = Color.Gold;
             label6.Font = new Font("Comic Sans MS", 48F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label6.Location = new Point(420, 237);
+            label6.Location = new Point(393, 237);
             label6.Name = "label6";
-            label6.Size = new Size(193, 90);
+            label6.Size = new Size(238, 90);
             label6.TabIndex = 25;
-            label6.Text = "Login";
+            label6.Text = "Log In";
             // 
             // button2
             // 
+            button2.BackColor = Color.LightGoldenrodYellow;
             button2.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(832, 433);
+            button2.Location = new Point(392, 561);
             button2.Name = "button2";
-            button2.Size = new Size(80, 80);
+            button2.Size = new Size(240, 75);
             button2.TabIndex = 23;
             button2.Text = "Take me back!";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // button1
             // 
+            button1.BackColor = Color.LightGoldenrodYellow;
             button1.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(808, 183);
+            button1.Location = new Point(392, 480);
             button1.Name = "button1";
-            button1.Size = new Size(80, 80);
+            button1.Size = new Size(240, 75);
             button1.TabIndex = 22;
             button1.Text = "LogIn";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Gold;
             label2.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(356, 399);
+            label2.Location = new Point(392, 399);
             label2.Name = "label2";
             label2.Size = new Size(81, 23);
             label2.TabIndex = 18;
@@ -84,8 +88,9 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Gold;
             label1.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(399, 348);
+            label1.Location = new Point(392, 348);
             label1.Name = "label1";
             label1.Size = new Size(85, 23);
             label1.TabIndex = 17;
@@ -93,7 +98,7 @@
             // 
             // PasswordInput
             // 
-            PasswordInput.Location = new Point(440, 398);
+            PasswordInput.Location = new Point(487, 399);
             PasswordInput.Name = "PasswordInput";
             PasswordInput.PasswordChar = '☠';
             PasswordInput.Size = new Size(136, 23);
@@ -108,6 +113,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.BackColor = Color.Gold;
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
@@ -121,6 +127,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.checkers;
             ClientSize = new Size(1008, 729);
             Controls.Add(pictureBox1);
             Controls.Add(label6);

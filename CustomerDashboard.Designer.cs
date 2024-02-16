@@ -68,6 +68,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.checkers;
             ClientSize = new Size(1008, 729);
             Controls.Add(CustomerView);
             Controls.Add(CustomerDelete);

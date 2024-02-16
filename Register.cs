@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TBS_CS
 {
@@ -17,12 +18,57 @@ namespace TBS_CS
             InitializeComponent();
         }
 
+        private void Register_Load(object sender, EventArgs e)
+        {
+            // Populate combo box
+            comboBox1.SelectedItem = null;
+            comboBox1.SelectedText = "--select--";
+            comboBox1.Items.Insert(0, "Customer");
+            comboBox1.Items.Insert(1, "Driver");
+            comboBox1.Items.Insert(2, "Admin");
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             // Take Me Back button
             Form form = new TaxiMenu();
             this.Hide();
             form.Show();
+        }
+
+        private void PhoneNumberInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Register Button
+            if (string.IsNullOrEmpty(UsernameInput.Text))
+            {
+                MessageBox.Show("Username box cannot be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (string.IsNullOrEmpty(PasswordInput.Text)) 
+            {
+                MessageBox.Show("Password box cannot be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (string.IsNullOrEmpty(FullnameInput.Text))
+            {
+                MessageBox.Show("Full Name box cannot be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (string.IsNullOrEmpty(PhoneNumberInput.Text))
+            {
+                MessageBox.Show("Phone Number box cannot be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (comboBox1.SelectedItem == null)
+            {
+                MessageBox.Show("Please select an item for user type", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
     }
 }
