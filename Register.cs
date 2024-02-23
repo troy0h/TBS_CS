@@ -32,13 +32,8 @@ namespace TBS_CS
         {
             // Take Me Back button
             Form form = new TaxiMenu();
-            this.Hide();
             form.Show();
-        }
-
-        private void PhoneNumberInput_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar);
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -72,6 +67,11 @@ namespace TBS_CS
             // Attempt to make account
             SQL.CreateUser(UsernameInput.Text, PasswordInput.Text, FullnameInput.Text, PhoneNumberInput.Text, comboBox1.Text);
             MessageBox.Show("Account created successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void Register_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(1);
         }
     }
 }

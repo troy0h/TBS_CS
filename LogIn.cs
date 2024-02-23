@@ -21,8 +21,8 @@ namespace TBS_CS
         {
             // Take Me Back button
             Form form = new TaxiMenu();
-            this.Hide();
             form.Show();
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -48,21 +48,25 @@ namespace TBS_CS
             if (user[2] == "Customer")
             {
                 Form form = new CustomerDashboard();
-                this.Hide();
                 form.Show();
+                this.Hide();
             }
             else if (user[2] == "Driver")
             {
                 Form form = new DriverDashboard();
-                this.Hide();
                 form.Show();
+                this.Hide();
             }
             else if (user[2] == "Admin")
             {
                 Form form = new AdminDashboard();
-                this.Hide();
                 form.Show();
+                this.Hide();
             }
+        }
+        private void LogIn_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(1);
         }
     }
 }

@@ -20,25 +20,31 @@ namespace TBS_CS
         private void LogIn_Click(object sender, EventArgs e)
         {
             Form form = new LogIn();
-            this.Hide();
             form.Show();
+            this.Hide();
         }
 
         private void Register_Click(object sender, EventArgs e)
         {
             Form form = new Register();
-            this.Hide();
             form.Show();
+            this.Hide();
         }
 
         private void Exit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (Application.MessageLoop)
+                Application.Exit();
+            else
+                Environment.Exit(1);
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void TaxiMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            if (Application.MessageLoop)
+                Application.Exit();
+            else
+                Environment.Exit(1);
         }
     }
 }
