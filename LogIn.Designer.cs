@@ -59,7 +59,7 @@
             button2.Name = "button2";
             button2.Size = new Size(240, 75);
             button2.TabIndex = 23;
-            button2.Text = "Take me back!";
+            button2.Text = "Back";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
@@ -71,8 +71,9 @@
             button1.Name = "button1";
             button1.Size = new Size(240, 75);
             button1.TabIndex = 22;
-            button1.Text = "LogIn";
+            button1.Text = "Log In";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label2
             // 
@@ -100,9 +101,9 @@
             // 
             PasswordInput.Location = new Point(487, 399);
             PasswordInput.Name = "PasswordInput";
-            PasswordInput.PasswordChar = '☠';
             PasswordInput.Size = new Size(136, 23);
             PasswordInput.TabIndex = 14;
+            PasswordInput.UseSystemPasswordChar = true;
             // 
             // UsernameInput
             // 
