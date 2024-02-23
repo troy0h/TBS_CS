@@ -69,6 +69,9 @@ namespace TBS_CS
                 MessageBox.Show("Please select an item for user type", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            // Attempt to make account
+            SQL.CreateUser(UsernameInput.Text, PasswordInput.Text, FullnameInput.Text, PhoneNumberInput.Text, comboBox1.Text);
+            MessageBox.Show("Account created successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

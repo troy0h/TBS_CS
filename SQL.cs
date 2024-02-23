@@ -31,7 +31,8 @@ namespace TBS_CS
                 carsTable.CommandText = @"
                         CREATE TABLE IF NOT EXISTS cars (
                         carId integer PRIMARY KEY,
-                        licenseNumber integer NOT NULL
+                        licenseNumber integer NOT NULL,
+                        carType text NOT NULL
                         );";
 
                 SqliteCommand tripsTable = connection.CreateCommand();
@@ -41,6 +42,7 @@ namespace TBS_CS
                         pickupAdd text NOT NULL,
                         dropoffAdd text NOT NULL,
                         pickupTime text NOT NULL,
+                        carType text NOT NULL,
                         customerID integer NOT NULL,
                         driverID integer,
                         carID integer,
@@ -100,7 +102,7 @@ namespace TBS_CS
 
         ///<summary>
         ///Get an existing user. 
-        ///<returns>Returns "fail" if unsuccessful, and the user data array if successful [Username, Name] </returns>
+        ///<returns>Returns "fail" if unsuccessful, and the user data array if successful [Username, Name, UserType] </returns>
         ///</summary>
         public static string[] GetUser(string username, string password)
         {
@@ -110,7 +112,7 @@ namespace TBS_CS
             {
                 connection.Open();
                 SqliteCommand findUser = connection.CreateCommand();
-                findUser.CommandText = @"SELECT username FROM users WHERE username = @user;";
+                findUser.CommandText = @"SELECT * FROM users WHERE username = @user;";
                 findUser.Parameters.AddWithValue("@user", username);
                 SqliteDataReader reader = findUser.ExecuteReader();
                 // If reader.Read = false, meaning no rows found:
@@ -121,20 +123,18 @@ namespace TBS_CS
                 }
                 // Otherwise, get the row and check passwords
                 // Starts at 0 for ID
-                while (reader.Read())
+                if (passHash != reader.GetString(2))
                 {
-                    if (passHash != reader.GetString(2))
-                    {
-                        // Passwords do not match
-                        connection.Close();
-                        return ["fail"];
-                    }
-                    else
-                    {
-                        // Passwords match, return user data array
-                        connection.Close();
-                        return [reader.GetString(1), reader.GetString(3)];
-                    }
+                    // Passwords do not match
+                    connection.Close();
+                    return ["fail"];
+                }
+                else
+                {
+                    // Passwords match, return user data array
+                    string[] toReturn = [reader.GetString(1), reader.GetString(3), reader.GetString(5)];
+                    connection.Close();
+                    return toReturn;
                 }
             }
             return [""];
