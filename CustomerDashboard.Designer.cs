@@ -31,38 +31,49 @@
             CustomerBook = new Button();
             CustomerDelete = new Button();
             CustomerView = new Button();
+            CustomerDelivery = new Button();
             SuspendLayout();
             // 
             // CustomerBook
             // 
             CustomerBook.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CustomerBook.Location = new Point(268, 391);
+            CustomerBook.Location = new Point(322, 245);
             CustomerBook.Name = "CustomerBook";
             CustomerBook.Size = new Size(135, 129);
             CustomerBook.TabIndex = 0;
-            CustomerBook.Text = "Book";
+            CustomerBook.Text = "Book Trip";
             CustomerBook.UseVisualStyleBackColor = true;
             CustomerBook.Click += button1_Click;
             // 
             // CustomerDelete
             // 
             CustomerDelete.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CustomerDelete.Location = new Point(435, 391);
+            CustomerDelete.Location = new Point(322, 406);
             CustomerDelete.Name = "CustomerDelete";
             CustomerDelete.Size = new Size(135, 129);
             CustomerDelete.TabIndex = 1;
-            CustomerDelete.Text = "Delete";
+            CustomerDelete.Text = "Cancel Trip";
             CustomerDelete.UseVisualStyleBackColor = true;
             // 
             // CustomerView
             // 
             CustomerView.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CustomerView.Location = new Point(594, 391);
+            CustomerView.Location = new Point(509, 406);
             CustomerView.Name = "CustomerView";
             CustomerView.Size = new Size(135, 129);
             CustomerView.TabIndex = 2;
-            CustomerView.Text = "View";
+            CustomerView.Text = "View Trips";
             CustomerView.UseVisualStyleBackColor = true;
+            // 
+            // CustomerDelivery
+            // 
+            CustomerDelivery.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CustomerDelivery.Location = new Point(509, 245);
+            CustomerDelivery.Name = "CustomerDelivery";
+            CustomerDelivery.Size = new Size(135, 129);
+            CustomerDelivery.TabIndex = 3;
+            CustomerDelivery.Text = "Book Delivery";
+            CustomerDelivery.UseVisualStyleBackColor = true;
             // 
             // CustomerDashboard
             // 
@@ -70,6 +81,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.checkers;
             ClientSize = new Size(1008, 729);
+            Controls.Add(CustomerDelivery);
             Controls.Add(CustomerView);
             Controls.Add(CustomerDelete);
             Controls.Add(CustomerBook);
@@ -83,5 +95,6 @@
         private Button CustomerBook;
         private Button CustomerDelete;
         private Button CustomerView;
+        private Button CustomerDelivery;
     }
 }
