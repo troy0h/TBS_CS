@@ -101,9 +101,9 @@
             // 
             PasswordInput.Location = new Point(487, 399);
             PasswordInput.Name = "PasswordInput";
-            PasswordInput.PasswordChar = '☠';
             PasswordInput.Size = new Size(136, 23);
             PasswordInput.TabIndex = 14;
+            PasswordInput.UseSystemPasswordChar = true;
             // 
             // UsernameInput
             // 
