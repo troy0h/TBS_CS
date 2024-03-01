@@ -40,9 +40,9 @@
             // AdminBooking
             // 
             AdminBooking.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            AdminBooking.Location = new Point(334, 287);
+            AdminBooking.Location = new Point(392, 273);
             AdminBooking.Name = "AdminBooking";
-            AdminBooking.Size = new Size(135, 129);
+            AdminBooking.Size = new Size(240, 75);
             AdminBooking.TabIndex = 2;
             AdminBooking.Text = "View Bookings";
             AdminBooking.UseVisualStyleBackColor = true;
@@ -51,9 +51,9 @@
             // AdminDrivers
             // 
             AdminDrivers.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            AdminDrivers.Location = new Point(549, 287);
+            AdminDrivers.Location = new Point(392, 364);
             AdminDrivers.Name = "AdminDrivers";
-            AdminDrivers.Size = new Size(135, 129);
+            AdminDrivers.Size = new Size(240, 75);
             AdminDrivers.TabIndex = 3;
             AdminDrivers.Text = "View Drivers";
             AdminDrivers.UseVisualStyleBackColor = true;
@@ -62,9 +62,9 @@
             // AdminCustomers
             // 
             AdminCustomers.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            AdminCustomers.Location = new Point(343, 444);
+            AdminCustomers.Location = new Point(392, 460);
             AdminCustomers.Name = "AdminCustomers";
-            AdminCustomers.Size = new Size(135, 129);
+            AdminCustomers.Size = new Size(240, 75);
             AdminCustomers.TabIndex = 4;
             AdminCustomers.Text = "View Customers";
             AdminCustomers.UseVisualStyleBackColor = true;
@@ -85,9 +85,9 @@
             // back
             // 
             back.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            back.Location = new Point(549, 444);
+            back.Location = new Point(392, 559);
             back.Name = "back";
-            back.Size = new Size(135, 129);
+            back.Size = new Size(240, 75);
             back.TabIndex = 6;
             back.Text = "Go Back";
             back.UseVisualStyleBackColor = true;

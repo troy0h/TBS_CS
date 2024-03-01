@@ -28,18 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerDashboard));
             CustomerBook = new Button();
             CustomerView = new Button();
             CustomerDelivery = new Button();
             logout = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // CustomerBook
             // 
             CustomerBook.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CustomerBook.Location = new Point(322, 245);
+            CustomerBook.Location = new Point(392, 326);
             CustomerBook.Name = "CustomerBook";
-            CustomerBook.Size = new Size(135, 129);
+            CustomerBook.Size = new Size(240, 75);
             CustomerBook.TabIndex = 0;
             CustomerBook.Text = "Book Trip";
             CustomerBook.UseVisualStyleBackColor = true;
@@ -48,35 +51,44 @@
             // CustomerView
             // 
             CustomerView.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CustomerView.Location = new Point(322, 398);
+            CustomerView.Location = new Point(392, 407);
             CustomerView.Name = "CustomerView";
-            CustomerView.Size = new Size(135, 129);
+            CustomerView.Size = new Size(240, 75);
             CustomerView.TabIndex = 2;
             CustomerView.Text = "View Trips";
             CustomerView.UseVisualStyleBackColor = true;
-            CustomerView.Click += CustomerView_Click;
             // 
             // CustomerDelivery
             // 
             CustomerDelivery.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CustomerDelivery.Location = new Point(509, 245);
+            CustomerDelivery.Location = new Point(392, 245);
             CustomerDelivery.Name = "CustomerDelivery";
-            CustomerDelivery.Size = new Size(135, 129);
+            CustomerDelivery.Size = new Size(240, 75);
             CustomerDelivery.TabIndex = 3;
             CustomerDelivery.Text = "Book Delivery";
             CustomerDelivery.UseVisualStyleBackColor = true;
-            CustomerDelivery.Click += CustomerDelivery_Click;
             // 
             // logout
             // 
             logout.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            logout.Location = new Point(509, 398);
+            logout.Location = new Point(392, 488);
             logout.Name = "logout";
-            logout.Size = new Size(135, 129);
+            logout.Size = new Size(240, 75);
             logout.TabIndex = 4;
             logout.Text = "Log Out";
             logout.UseVisualStyleBackColor = true;
-            logout.Click += logout_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Gold;
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(392, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(240, 222);
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
             // 
             // CustomerDashboard
             // 
@@ -84,12 +96,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.checkers;
             ClientSize = new Size(1008, 729);
+            Controls.Add(pictureBox1);
             Controls.Add(logout);
             Controls.Add(CustomerDelivery);
             Controls.Add(CustomerView);
             Controls.Add(CustomerBook);
             Name = "CustomerDashboard";
             Text = "CustomerDashboard";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -99,5 +113,6 @@
         private Button CustomerView;
         private Button CustomerDelivery;
         private Button logout;
+        private PictureBox pictureBox1;
     }
 }

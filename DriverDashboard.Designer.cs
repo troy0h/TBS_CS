@@ -38,9 +38,9 @@
             // DriverBooking
             // 
             DriverBooking.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DriverBooking.Location = new Point(444, 434);
+            DriverBooking.Location = new Point(392, 426);
             DriverBooking.Name = "DriverBooking";
-            DriverBooking.Size = new Size(135, 129);
+            DriverBooking.Size = new Size(240, 75);
             DriverBooking.TabIndex = 1;
             DriverBooking.Text = "Go Back";
             DriverBooking.UseVisualStyleBackColor = true;
@@ -49,9 +49,9 @@
             // ChooseJob
             // 
             ChooseJob.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ChooseJob.Location = new Point(444, 273);
+            ChooseJob.Location = new Point(392, 287);
             ChooseJob.Name = "ChooseJob";
-            ChooseJob.Size = new Size(135, 129);
+            ChooseJob.Size = new Size(240, 75);
             ChooseJob.TabIndex = 2;
             ChooseJob.Text = "Choose Available Jobs";
             ChooseJob.UseVisualStyleBackColor = true;

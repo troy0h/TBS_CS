@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminCustomers));
             pictureBox1 = new PictureBox();
             back = new Button();
+            CustomerList = new ListBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -49,13 +50,22 @@
             // back
             // 
             back.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            back.Location = new Point(437, 300);
+            back.Location = new Point(392, 538);
             back.Name = "back";
-            back.Size = new Size(135, 129);
+            back.Size = new Size(240, 75);
             back.TabIndex = 7;
             back.Text = "Go Back";
             back.UseVisualStyleBackColor = true;
             back.Click += back_Click;
+            // 
+            // CustomerList
+            // 
+            CustomerList.FormattingEnabled = true;
+            CustomerList.ItemHeight = 15;
+            CustomerList.Location = new Point(260, 243);
+            CustomerList.Name = "CustomerList";
+            CustomerList.Size = new Size(504, 274);
+            CustomerList.TabIndex = 8;
             // 
             // AdminCustomers
             // 
@@ -63,6 +73,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.checkers;
             ClientSize = new Size(1008, 729);
+            Controls.Add(CustomerList);
             Controls.Add(back);
             Controls.Add(pictureBox1);
             Name = "AdminCustomers";
@@ -75,5 +86,6 @@
 
         private PictureBox pictureBox1;
         private Button back;
+        private ListBox CustomerList;
     }
 }

@@ -39,20 +39,20 @@
             // 
             // canceljobs
             // 
-            canceljobs.Font = new Font("Segoe UI", 14F);
-            canceljobs.Location = new Point(588, 518);
+            canceljobs.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            canceljobs.Location = new Point(524, 561);
             canceljobs.Name = "canceljobs";
-            canceljobs.Size = new Size(176, 101);
+            canceljobs.Size = new Size(240, 75);
             canceljobs.TabIndex = 6;
             canceljobs.Text = "Cancel Job";
             canceljobs.UseVisualStyleBackColor = true;
             // 
             // acceptjob
             // 
-            acceptjob.Font = new Font("Segoe UI", 14F);
-            acceptjob.Location = new Point(260, 518);
+            acceptjob.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            acceptjob.Location = new Point(260, 561);
             acceptjob.Name = "acceptjob";
-            acceptjob.Size = new Size(176, 101);
+            acceptjob.Size = new Size(240, 75);
             acceptjob.TabIndex = 8;
             acceptjob.Text = "Accept Job";
             acceptjob.UseVisualStyleBackColor = true;
@@ -61,7 +61,7 @@
             // 
             DriverJobs.FormattingEnabled = true;
             DriverJobs.ItemHeight = 15;
-            DriverJobs.Location = new Point(260, 229);
+            DriverJobs.Location = new Point(260, 272);
             DriverJobs.Name = "DriverJobs";
             DriverJobs.Size = new Size(504, 274);
             DriverJobs.TabIndex = 7;
@@ -72,7 +72,7 @@
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(392, 1);
+            pictureBox1.Location = new Point(392, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(240, 222);
             pictureBox1.TabIndex = 9;
@@ -80,10 +80,10 @@
             // 
             // back
             // 
-            back.Font = new Font("Segoe UI", 14F);
-            back.Location = new Point(424, 625);
+            back.Font = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            back.Location = new Point(392, 642);
             back.Name = "back";
-            back.Size = new Size(176, 101);
+            back.Size = new Size(240, 75);
             back.TabIndex = 10;
             back.Text = "Go Back";
             back.UseVisualStyleBackColor = true;

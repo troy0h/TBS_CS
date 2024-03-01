@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminBookings));
             pictureBox1 = new PictureBox();
             back = new Button();
+            BookingsList = new ListBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -49,13 +50,22 @@
             // back
             // 
             back.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            back.Location = new Point(441, 451);
+            back.Location = new Point(392, 539);
             back.Name = "back";
-            back.Size = new Size(135, 129);
+            back.Size = new Size(240, 75);
             back.TabIndex = 7;
             back.Text = "Go Back";
             back.UseVisualStyleBackColor = true;
             back.Click += back_Click;
+            // 
+            // BookingsList
+            // 
+            BookingsList.FormattingEnabled = true;
+            BookingsList.ItemHeight = 15;
+            BookingsList.Location = new Point(260, 240);
+            BookingsList.Name = "BookingsList";
+            BookingsList.Size = new Size(504, 274);
+            BookingsList.TabIndex = 8;
             // 
             // AdminBookings
             // 
@@ -63,6 +73,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.checkers;
             ClientSize = new Size(1008, 729);
+            Controls.Add(BookingsList);
             Controls.Add(back);
             Controls.Add(pictureBox1);
             Name = "AdminBookings";
@@ -75,5 +86,6 @@
 
         private PictureBox pictureBox1;
         private Button back;
+        private ListBox BookingsList;
     }
 }
