@@ -38,7 +38,7 @@
             // DriverBooking
             // 
             DriverBooking.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DriverBooking.Location = new Point(552, 274);
+            DriverBooking.Location = new Point(545, 428);
             DriverBooking.Name = "DriverBooking";
             DriverBooking.Size = new Size(135, 129);
             DriverBooking.TabIndex = 1;

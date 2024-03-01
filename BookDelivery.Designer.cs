@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< Updated upstream
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookDelivery));
             pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -45,16 +46,26 @@
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
             // 
+=======
+            SuspendLayout();
+            // 
+>>>>>>> Stashed changes
             // BookDelivery
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+<<<<<<< Updated upstream
             BackgroundImage = Properties.Resources.checkers;
             ClientSize = new Size(1008, 729);
             Controls.Add(pictureBox1);
             Name = "BookDelivery";
             Text = "BookDelivery";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+=======
+            ClientSize = new Size(1008, 729);
+            Name = "BookDelivery";
+            Text = "BookDelivery";
+>>>>>>> Stashed changes
             ResumeLayout(false);
         }
 
