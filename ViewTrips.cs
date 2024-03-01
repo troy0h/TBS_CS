@@ -16,5 +16,12 @@ namespace TBS_CS
         {
             InitializeComponent();
         }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            Form form = new CustomerDashboard();
+            form.Show();
+            this.Hide();
+        }
     }
 }

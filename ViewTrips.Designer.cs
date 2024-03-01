@@ -30,31 +30,43 @@
         {
             CustomerBookings = new ListBox();
             cancelbooking = new Button();
+            back = new Button();
             SuspendLayout();
             // 
             // CustomerBookings
             // 
             CustomerBookings.FormattingEnabled = true;
             CustomerBookings.ItemHeight = 15;
-            CustomerBookings.Location = new Point(12, 12);
+            CustomerBookings.Location = new Point(260, 229);
             CustomerBookings.Name = "CustomerBookings";
-            CustomerBookings.Size = new Size(984, 349);
+            CustomerBookings.Size = new Size(504, 349);
             CustomerBookings.TabIndex = 0;
             // 
             // cancelbooking
             // 
-            cancelbooking.Location = new Point(12, 386);
+            cancelbooking.Location = new Point(260, 603);
             cancelbooking.Name = "cancelbooking";
             cancelbooking.Size = new Size(176, 101);
             cancelbooking.TabIndex = 1;
             cancelbooking.Text = "Cancel Booking";
             cancelbooking.UseVisualStyleBackColor = true;
             // 
+            // back
+            // 
+            back.Location = new Point(588, 603);
+            back.Name = "back";
+            back.Size = new Size(176, 101);
+            back.TabIndex = 2;
+            back.Text = "Go Back";
+            back.UseVisualStyleBackColor = true;
+            back.Click += back_Click;
+            // 
             // ViewTrips
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1008, 729);
+            Controls.Add(back);
             Controls.Add(cancelbooking);
             Controls.Add(CustomerBookings);
             Name = "ViewTrips";
@@ -66,5 +78,6 @@
 
         private ListBox CustomerBookings;
         private Button cancelbooking;
+        private Button back;
     }
 }

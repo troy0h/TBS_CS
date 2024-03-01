@@ -33,6 +33,7 @@
             AdminDrivers = new Button();
             AdminCustomers = new Button();
             pictureBox1 = new PictureBox();
+            back = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -45,6 +46,7 @@
             AdminBooking.TabIndex = 2;
             AdminBooking.Text = "View Bookings";
             AdminBooking.UseVisualStyleBackColor = true;
+            AdminBooking.Click += AdminBooking_Click;
             // 
             // AdminDrivers
             // 
@@ -55,16 +57,18 @@
             AdminDrivers.TabIndex = 3;
             AdminDrivers.Text = "View Drivers";
             AdminDrivers.UseVisualStyleBackColor = true;
+            AdminDrivers.Click += AdminDrivers_Click;
             // 
             // AdminCustomers
             // 
             AdminCustomers.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            AdminCustomers.Location = new Point(445, 422);
+            AdminCustomers.Location = new Point(343, 444);
             AdminCustomers.Name = "AdminCustomers";
             AdminCustomers.Size = new Size(135, 129);
             AdminCustomers.TabIndex = 4;
             AdminCustomers.Text = "View Customers";
             AdminCustomers.UseVisualStyleBackColor = true;
+            AdminCustomers.Click += AdminCustomers_Click;
             // 
             // pictureBox1
             // 
@@ -78,12 +82,24 @@
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 
+            // back
+            // 
+            back.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            back.Location = new Point(549, 444);
+            back.Name = "back";
+            back.Size = new Size(135, 129);
+            back.TabIndex = 6;
+            back.Text = "Go Back";
+            back.UseVisualStyleBackColor = true;
+            back.Click += back_Click;
+            // 
             // AdminDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.checkers;
             ClientSize = new Size(1008, 729);
+            Controls.Add(back);
             Controls.Add(pictureBox1);
             Controls.Add(AdminCustomers);
             Controls.Add(AdminDrivers);
@@ -101,5 +117,6 @@
         private Button AdminDrivers;
         private Button AdminCustomers;
         private PictureBox pictureBox1;
+        private Button back;
     }
 }

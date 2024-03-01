@@ -19,6 +19,30 @@ namespace TBS_CS
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Form form = new BookTrip();
+            form.Show();
+            this.Hide();
+        }
+
+        private void CustomerDelivery_Click(object sender, EventArgs e)
+        {
+            Form form = new BookDelivery();
+            form.Show();
+            this.Hide();
+        }
+
+        private void CustomerView_Click(object sender, EventArgs e)
+        {
+            Form form = new ViewTrips();
+            form.Show();
+            this.Hide();
+        }
+
+        private void logout_Click(object sender, EventArgs e)
+        {
+            Form form = new TaxiMenu();
+            form.Show();
+            this.Hide();
 
         }
     }
