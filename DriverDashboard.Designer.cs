@@ -48,11 +48,7 @@
             // ChooseJob
             // 
             ChooseJob.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-<<<<<<< Updated upstream
-            ChooseJob.Location = new Point(329, 274);
-=======
             ChooseJob.Location = new Point(352, 428);
->>>>>>> Stashed changes
             ChooseJob.Name = "ChooseJob";
             ChooseJob.Size = new Size(135, 129);
             ChooseJob.TabIndex = 2;
