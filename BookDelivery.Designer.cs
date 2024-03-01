@@ -54,7 +54,6 @@
             Controls.Add(pictureBox1);
             Name = "BookDelivery";
             Text = "BookDelivery";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
