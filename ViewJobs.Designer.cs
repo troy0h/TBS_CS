@@ -28,12 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "ViewJobs";
+            canceljobs = new Button();
+            DriverJobs = new ListBox();
+            SuspendLayout();
+            // 
+            // canceljobs
+            // 
+            canceljobs.Location = new Point(12, 386);
+            canceljobs.Name = "canceljobs";
+            canceljobs.Size = new Size(176, 101);
+            canceljobs.TabIndex = 3;
+            canceljobs.Text = "Cancel Job";
+            canceljobs.UseVisualStyleBackColor = true;
+            // 
+            // DriverJobs
+            // 
+            DriverJobs.FormattingEnabled = true;
+            DriverJobs.ItemHeight = 15;
+            DriverJobs.Location = new Point(12, 12);
+            DriverJobs.Name = "DriverJobs";
+            DriverJobs.Size = new Size(984, 349);
+            DriverJobs.TabIndex = 2;
+            // 
+            // ViewJobs
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1008, 729);
+            Controls.Add(canceljobs);
+            Controls.Add(DriverJobs);
+            Name = "ViewJobs";
+            Text = "ViewJobs";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button canceljobs;
+        private ListBox DriverJobs;
     }
 }
