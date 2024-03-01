@@ -21,5 +21,33 @@ namespace TBS_CS
         {
 
         }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            Form form = new TaxiMenu();
+            form.Show();
+            this.Hide();
+        }
+
+        private void AdminBooking_Click(object sender, EventArgs e)
+        {
+            Form form = new AdminBookings();
+            form.Show();
+            this.Hide();
+        }
+
+        private void AdminDrivers_Click(object sender, EventArgs e)
+        {
+            Form form = new AdminDrivers();
+            form.Show();
+            this.Hide();
+        }
+
+        private void AdminCustomers_Click(object sender, EventArgs e)
+        {
+            Form form = new AdminCustomers();
+            form.Show();
+            this.Hide();
+        }
     }
 }

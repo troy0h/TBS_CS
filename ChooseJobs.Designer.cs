@@ -28,14 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChooseJobs));
             canceljobs = new Button();
             acceptjob = new Button();
             DriverJobs = new ListBox();
+            pictureBox1 = new PictureBox();
+            back = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // canceljobs
             // 
-            canceljobs.Location = new Point(589, 386);
+            canceljobs.Font = new Font("Segoe UI", 14F);
+            canceljobs.Location = new Point(588, 518);
             canceljobs.Name = "canceljobs";
             canceljobs.Size = new Size(176, 101);
             canceljobs.TabIndex = 6;
@@ -44,7 +49,8 @@
             // 
             // acceptjob
             // 
-            acceptjob.Location = new Point(261, 386);
+            acceptjob.Font = new Font("Segoe UI", 14F);
+            acceptjob.Location = new Point(260, 518);
             acceptjob.Name = "acceptjob";
             acceptjob.Size = new Size(176, 101);
             acceptjob.TabIndex = 8;
@@ -55,10 +61,33 @@
             // 
             DriverJobs.FormattingEnabled = true;
             DriverJobs.ItemHeight = 15;
-            DriverJobs.Location = new Point(261, 12);
+            DriverJobs.Location = new Point(260, 229);
             DriverJobs.Name = "DriverJobs";
-            DriverJobs.Size = new Size(504, 349);
+            DriverJobs.Size = new Size(504, 274);
             DriverJobs.TabIndex = 7;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Gold;
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(392, 1);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(240, 222);
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
+            // 
+            // back
+            // 
+            back.Font = new Font("Segoe UI", 14F);
+            back.Location = new Point(424, 625);
+            back.Name = "back";
+            back.Size = new Size(176, 101);
+            back.TabIndex = 10;
+            back.Text = "Go Back";
+            back.UseVisualStyleBackColor = true;
+            back.Click += back_Click;
             // 
             // ChooseJobs
             // 
@@ -66,11 +95,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.checkers;
             ClientSize = new Size(1008, 729);
+            Controls.Add(back);
+            Controls.Add(pictureBox1);
             Controls.Add(acceptjob);
             Controls.Add(DriverJobs);
             Controls.Add(canceljobs);
             Name = "ChooseJobs";
             Text = "ChooseJobs";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -79,5 +111,7 @@
         private Button canceljobs;
         private Button acceptjob;
         private ListBox DriverJobs;
+        private PictureBox pictureBox1;
+        private Button back;
     }
 }

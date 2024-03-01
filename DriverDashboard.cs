@@ -16,5 +16,19 @@ namespace TBS_CS
         {
             InitializeComponent();
         }
+
+        private void DriverBooking_Click(object sender, EventArgs e)
+        {
+            Form form = new TaxiMenu();
+            form.Show();
+            this.Hide();
+        }
+
+        private void ChooseJob_Click(object sender, EventArgs e)
+        {
+            Form form = new ChooseJobs();
+            form.Show();
+            this.Hide();
+        }
     }
 }

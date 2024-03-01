@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             CustomerBook = new Button();
-            CustomerDelete = new Button();
             CustomerView = new Button();
             CustomerDelivery = new Button();
+            logout = new Button();
             SuspendLayout();
             // 
             // CustomerBook
@@ -45,25 +45,16 @@
             CustomerBook.UseVisualStyleBackColor = true;
             CustomerBook.Click += button1_Click;
             // 
-            // CustomerDelete
-            // 
-            CustomerDelete.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CustomerDelete.Location = new Point(322, 406);
-            CustomerDelete.Name = "CustomerDelete";
-            CustomerDelete.Size = new Size(135, 129);
-            CustomerDelete.TabIndex = 1;
-            CustomerDelete.Text = "Cancel Trip";
-            CustomerDelete.UseVisualStyleBackColor = true;
-            // 
             // CustomerView
             // 
             CustomerView.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CustomerView.Location = new Point(509, 406);
+            CustomerView.Location = new Point(322, 398);
             CustomerView.Name = "CustomerView";
             CustomerView.Size = new Size(135, 129);
             CustomerView.TabIndex = 2;
             CustomerView.Text = "View Trips";
             CustomerView.UseVisualStyleBackColor = true;
+            CustomerView.Click += CustomerView_Click;
             // 
             // CustomerDelivery
             // 
@@ -74,6 +65,18 @@
             CustomerDelivery.TabIndex = 3;
             CustomerDelivery.Text = "Book Delivery";
             CustomerDelivery.UseVisualStyleBackColor = true;
+            CustomerDelivery.Click += CustomerDelivery_Click;
+            // 
+            // logout
+            // 
+            logout.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            logout.Location = new Point(509, 398);
+            logout.Name = "logout";
+            logout.Size = new Size(135, 129);
+            logout.TabIndex = 4;
+            logout.Text = "Log Out";
+            logout.UseVisualStyleBackColor = true;
+            logout.Click += logout_Click;
             // 
             // CustomerDashboard
             // 
@@ -81,9 +84,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.checkers;
             ClientSize = new Size(1008, 729);
+            Controls.Add(logout);
             Controls.Add(CustomerDelivery);
             Controls.Add(CustomerView);
-            Controls.Add(CustomerDelete);
             Controls.Add(CustomerBook);
             Name = "CustomerDashboard";
             Text = "CustomerDashboard";
@@ -93,8 +96,8 @@
         #endregion
 
         private Button CustomerBook;
-        private Button CustomerDelete;
         private Button CustomerView;
         private Button CustomerDelivery;
+        private Button logout;
     }
 }
