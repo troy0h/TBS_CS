@@ -28,49 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< Updated upstream
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChooseJobs));
-            pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            canceljobs = new Button();
+            acceptjob = new Button();
+            DriverJobs = new ListBox();
             SuspendLayout();
             // 
-            // pictureBox1
+            // canceljobs
             // 
-            pictureBox1.BackColor = Color.Gold;
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(392, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(240, 222);
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
+            canceljobs.Location = new Point(589, 386);
+            canceljobs.Name = "canceljobs";
+            canceljobs.Size = new Size(176, 101);
+            canceljobs.TabIndex = 6;
+            canceljobs.Text = "Cancel Job";
+            canceljobs.UseVisualStyleBackColor = true;
             // 
-=======
-            SuspendLayout();
+            // acceptjob
             // 
->>>>>>> Stashed changes
+            acceptjob.Location = new Point(261, 386);
+            acceptjob.Name = "acceptjob";
+            acceptjob.Size = new Size(176, 101);
+            acceptjob.TabIndex = 8;
+            acceptjob.Text = "Accept Job";
+            acceptjob.UseVisualStyleBackColor = true;
+            // 
+            // DriverJobs
+            // 
+            DriverJobs.FormattingEnabled = true;
+            DriverJobs.ItemHeight = 15;
+            DriverJobs.Location = new Point(261, 12);
+            DriverJobs.Name = "DriverJobs";
+            DriverJobs.Size = new Size(504, 349);
+            DriverJobs.TabIndex = 7;
+            // 
             // ChooseJobs
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-<<<<<<< Updated upstream
             BackgroundImage = Properties.Resources.checkers;
             ClientSize = new Size(1008, 729);
-            Controls.Add(pictureBox1);
+            Controls.Add(acceptjob);
+            Controls.Add(DriverJobs);
+            Controls.Add(canceljobs);
             Name = "ChooseJobs";
             Text = "ChooseJobs";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-=======
-            ClientSize = new Size(1008, 729);
-            Name = "ChooseJobs";
-            Text = "ChooseJobs";
->>>>>>> Stashed changes
             ResumeLayout(false);
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private Button canceljobs;
+        private Button acceptjob;
+        private ListBox DriverJobs;
     }
 }

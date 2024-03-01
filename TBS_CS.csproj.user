@@ -40,9 +40,6 @@
     <Compile Update="TaxiMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ViewJobs.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="ViewTrips.cs">
       <SubType>Form</SubType>
     </Compile>
