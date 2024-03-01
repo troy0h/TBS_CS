@@ -137,7 +137,6 @@ namespace TBS_CS
                     return toReturn;
                 }
             }
-            return [""];
         }
 
         ///<summary>
