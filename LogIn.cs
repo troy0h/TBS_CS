@@ -45,21 +45,22 @@ namespace TBS_CS
                 MessageBox.Show("Username or password is incorrect", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (user[2] == "Customer")
+            int id = Int32.Parse(user[0]);
+            if (user[3] == "Customer")
             {
-                Form form = new CustomerDashboard();
+                Form form = new CustomerDashboard(id);
                 form.Show();
                 this.Hide();
             }
-            else if (user[2] == "Driver")
+            else if (user[3] == "Driver")
             {
-                Form form = new DriverDashboard();
+                Form form = new DriverDashboard(id);
                 form.Show();
                 this.Hide();
             }
-            else if (user[2] == "Admin")
+            else if (user[3] == "Admin")
             {
-                Form form = new AdminDashboard();
+                Form form = new AdminDashboard(id);
                 form.Show();
                 this.Hide();
             }

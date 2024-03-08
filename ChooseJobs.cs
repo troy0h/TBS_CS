@@ -12,14 +12,16 @@ namespace TBS_CS
 {
     public partial class ChooseJobs : Form
     {
-        public ChooseJobs()
+        public int id { get; set; }
+        public ChooseJobs(int id)
         {
             InitializeComponent();
+            this.id = id;
         }
 
         private void back_Click(object sender, EventArgs e)
         {
-            Form form = new DriverDashboard();
+            Form form = new DriverDashboard(id);
             form.Show();
             this.Hide();
         }

@@ -54,6 +54,7 @@
             button1.TabIndex = 0;
             button1.Text = "Back";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -195,6 +196,7 @@
             Controls.Add(button1);
             Name = "BookTrip";
             Text = "BookTrip";
+            Load += BookTrip_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

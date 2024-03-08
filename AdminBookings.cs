@@ -12,14 +12,16 @@ namespace TBS_CS
 {
     public partial class AdminBookings : Form
     {
-        public AdminBookings()
+        public int id { get; set; }
+        public AdminBookings(int id)
         {
             InitializeComponent();
+            this.id = id;
         }
 
         private void back_Click(object sender, EventArgs e)
         {
-            Form form = new AdminDashboard();
+            Form form = new AdminDashboard(id);
             form.Show();
             this.Hide();
         }

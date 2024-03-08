@@ -12,9 +12,11 @@ namespace TBS_CS
 {
     public partial class BookDelivery : Form
     {
-        public BookDelivery()
+        public int id { get; set; }
+        public BookDelivery(int id)
         {
             InitializeComponent();
+            this.id = id;
         }
     }
 }

@@ -132,7 +132,7 @@ namespace TBS_CS
                 else
                 {
                     // Passwords match, return user data array
-                    string[] toReturn = [reader.GetString(1), reader.GetString(3), reader.GetString(5)];
+                    string[] toReturn = [reader.GetInt32(0).ToString(), reader.GetString(1), reader.GetString(3), reader.GetString(5)];
                     connection.Close();
                     return toReturn;
                 }

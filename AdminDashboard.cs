@@ -12,9 +12,11 @@ namespace TBS_CS
 {
     public partial class AdminDashboard : Form
     {
-        public AdminDashboard()
+        public int id { get; set; }
+        public AdminDashboard(int id)
         {
             InitializeComponent();
+            this.id = id;
         }
 
         private void AdminDashboard_Load(object sender, EventArgs e)
@@ -31,21 +33,21 @@ namespace TBS_CS
 
         private void AdminBooking_Click(object sender, EventArgs e)
         {
-            Form form = new AdminBookings();
+            Form form = new AdminBookings(id);
             form.Show();
             this.Hide();
         }
 
         private void AdminDrivers_Click(object sender, EventArgs e)
         {
-            Form form = new AdminDrivers();
+            Form form = new AdminDrivers(id);
             form.Show();
             this.Hide();
         }
 
         private void AdminCustomers_Click(object sender, EventArgs e)
         {
-            Form form = new AdminCustomers();
+            Form form = new AdminCustomers(id);
             form.Show();
             this.Hide();
         }

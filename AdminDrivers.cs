@@ -12,14 +12,16 @@ namespace TBS_CS
 {
     public partial class AdminDrivers : Form
     {
-        public AdminDrivers()
+        public int id { get; set; }
+        public AdminDrivers(int id)
         {
             InitializeComponent();
+            this.id = id;
         }
 
         private void back_Click(object sender, EventArgs e)
         {
-            Form form = new AdminDashboard();
+            Form form = new AdminDashboard(id);
             form.Show();
             this.Hide();
         }

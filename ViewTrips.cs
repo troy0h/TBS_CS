@@ -12,14 +12,16 @@ namespace TBS_CS
 {
     public partial class ViewTrips : Form
     {
-        public ViewTrips()
+        public int id { get; set; }
+        public ViewTrips(int id)
         {
             InitializeComponent();
+            this.id = id;
         }
 
         private void back_Click(object sender, EventArgs e)
         {
-            Form form = new CustomerDashboard();
+            Form form = new CustomerDashboard(id);
             form.Show();
             this.Hide();
         }

@@ -12,28 +12,31 @@ namespace TBS_CS
 {
     public partial class CustomerDashboard : Form
     {
-        public CustomerDashboard()
+        public int id { get; set; }
+
+        public CustomerDashboard(int id)
         {
             InitializeComponent();
+            this.id = id;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form form = new BookTrip();
+            Form form = new BookTrip(id);
             form.Show();
             this.Hide();
         }
 
         private void CustomerDelivery_Click(object sender, EventArgs e)
         {
-            Form form = new BookDelivery();
+            Form form = new BookDelivery(id);
             form.Show();
             this.Hide();
         }
 
         private void CustomerView_Click(object sender, EventArgs e)
         {
-            Form form = new ViewTrips();
+            Form form = new ViewTrips(id);
             form.Show();
             this.Hide();
         }
@@ -43,7 +46,6 @@ namespace TBS_CS
             Form form = new TaxiMenu();
             form.Show();
             this.Hide();
-
         }
     }
 }

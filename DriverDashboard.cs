@@ -12,9 +12,11 @@ namespace TBS_CS
 {
     public partial class DriverDashboard : Form
     {
-        public DriverDashboard()
+        public int id { get; set; }
+        public DriverDashboard(int id)
         {
             InitializeComponent();
+            this.id = id;
         }
 
         private void DriverBooking_Click(object sender, EventArgs e)
@@ -26,7 +28,7 @@ namespace TBS_CS
 
         private void ChooseJob_Click(object sender, EventArgs e)
         {
-            Form form = new ChooseJobs();
+            Form form = new ChooseJobs(id);
             form.Show();
             this.Hide();
         }
