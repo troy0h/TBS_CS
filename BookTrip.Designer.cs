@@ -28,190 +28,174 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookTrip));
             button1 = new Button();
             button2 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
+            PickUpAddBox = new TextBox();
+            TimeBox = new TextBox();
+            DateBox = new TextBox();
+            DropOffAddBox = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
-            listBox1 = new ListBox();
+            comboBox1 = new ComboBox();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(230, 498);
+            button1.Font = new Font("Comic Sans MS", 12F);
+            button1.Location = new Point(396, 599);
             button1.Name = "button1";
-            button1.Size = new Size(84, 75);
+            button1.Size = new Size(240, 75);
             button1.TabIndex = 0;
             button1.Text = "Back";
             button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            button2.Location = new Point(619, 498);
+            button2.Font = new Font("Comic Sans MS", 12F);
+            button2.Location = new Point(396, 518);
             button2.Name = "button2";
-            button2.Size = new Size(84, 75);
+            button2.Size = new Size(240, 75);
             button2.TabIndex = 1;
             button2.Text = "Request taxi";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
-            // textBox1
+            // PickUpAddBox
             // 
-            textBox1.Location = new Point(572, 129);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(205, 23);
-            textBox1.TabIndex = 2;
+            PickUpAddBox.Font = new Font("Comic Sans MS", 9F);
+            PickUpAddBox.Location = new Point(491, 431);
+            PickUpAddBox.Name = "PickUpAddBox";
+            PickUpAddBox.Size = new Size(145, 24);
+            PickUpAddBox.TabIndex = 3;
             // 
-            // textBox2
+            // TimeBox
             // 
-            textBox2.Location = new Point(619, 327);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(84, 23);
-            textBox2.TabIndex = 3;
+            TimeBox.Font = new Font("Comic Sans MS", 9F);
+            TimeBox.Location = new Point(491, 311);
+            TimeBox.Name = "TimeBox";
+            TimeBox.Size = new Size(145, 24);
+            TimeBox.TabIndex = 5;
             // 
-            // textBox3
+            // DateBox
             // 
-            textBox3.Location = new Point(239, 396);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(304, 23);
-            textBox3.TabIndex = 4;
+            DateBox.Font = new Font("Comic Sans MS", 9F);
+            DateBox.Location = new Point(491, 351);
+            DateBox.Name = "DateBox";
+            DateBox.Size = new Size(145, 24);
+            DateBox.TabIndex = 6;
             // 
-            // textBox4
+            // DropOffAddBox
             // 
-            textBox4.Location = new Point(239, 259);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(117, 23);
-            textBox4.TabIndex = 5;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(374, 259);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(113, 23);
-            textBox5.TabIndex = 6;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(619, 396);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(84, 23);
-            textBox6.TabIndex = 7;
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(239, 327);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(304, 23);
-            textBox7.TabIndex = 8;
+            DropOffAddBox.Font = new Font("Comic Sans MS", 9F);
+            DropOffAddBox.Location = new Point(491, 471);
+            DropOffAddBox.Name = "DropOffAddBox";
+            DropOffAddBox.Size = new Size(145, 24);
+            DropOffAddBox.TabIndex = 7;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(552, 335);
+            label1.BackColor = Color.Gold;
+            label1.Font = new Font("Comic Sans MS", 12F);
+            label1.Location = new Point(344, 432);
             label1.Name = "label1";
-            label1.Size = new Size(61, 15);
+            label1.Size = new Size(146, 23);
             label1.TabIndex = 9;
-            label1.Text = "Post Code";
+            label1.Text = "Pick Up Post Code:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(552, 404);
+            label2.BackColor = Color.Gold;
+            label2.Font = new Font("Comic Sans MS", 12F);
+            label2.Location = new Point(329, 472);
             label2.Name = "label2";
-            label2.Size = new Size(61, 15);
+            label2.Size = new Size(161, 23);
             label2.TabIndex = 10;
-            label2.Text = "Post Code";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(239, 300);
-            label3.Name = "label3";
-            label3.Size = new Size(92, 15);
-            label3.TabIndex = 11;
-            label3.Text = "Pick Up Address";
-            label3.Click += label3_Click;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(239, 378);
-            label4.Name = "label4";
-            label4.Size = new Size(98, 15);
-            label4.TabIndex = 12;
-            label4.Text = "Drop Off Address";
+            label2.Text = "Drop Off Post Code:";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(239, 231);
+            label5.BackColor = Color.Gold;
+            label5.Font = new Font("Comic Sans MS", 12F);
+            label5.Location = new Point(440, 312);
             label5.Name = "label5";
-            label5.Size = new Size(33, 15);
+            label5.Size = new Size(50, 23);
             label5.TabIndex = 13;
-            label5.Text = "Time";
+            label5.Text = "Time:";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(374, 231);
+            label6.BackColor = Color.Gold;
+            label6.Font = new Font("Comic Sans MS", 12F);
+            label6.Location = new Point(440, 352);
             label6.Name = "label6";
-            label6.Size = new Size(31, 15);
+            label6.Size = new Size(50, 23);
             label6.TabIndex = 14;
-            label6.Text = "Date";
+            label6.Text = "Date:";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(498, 231);
+            label7.BackColor = Color.Gold;
+            label7.Font = new Font("Comic Sans MS", 12F);
+            label7.Location = new Point(400, 393);
             label7.Name = "label7";
-            label7.Size = new Size(54, 15);
+            label7.Size = new Size(90, 23);
             label7.TabIndex = 15;
-            label7.Text = "Taxi Type";
+            label7.Text = "Taxi Type:";
             // 
-            // listBox1
+            // comboBox1
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Items.AddRange(new object[] { "Car", "Van", "Electric Car" });
-            listBox1.Location = new Point(498, 263);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(205, 19);
-            listBox1.TabIndex = 16;
+            comboBox1.Font = new Font("Comic Sans MS", 9F);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(491, 391);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(145, 25);
+            comboBox1.TabIndex = 16;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Gold;
+            pictureBox1.BackgroundImage = Properties.Resources.Taxi_logo1;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(396, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(240, 222);
+            pictureBox1.TabIndex = 28;
+            pictureBox1.TabStop = false;
             // 
             // BookTrip
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.checkers;
             ClientSize = new Size(1008, 729);
-            Controls.Add(listBox1);
+            Controls.Add(pictureBox1);
+            Controls.Add(comboBox1);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(DropOffAddBox);
+            Controls.Add(DateBox);
+            Controls.Add(TimeBox);
+            Controls.Add(PickUpAddBox);
             Controls.Add(button2);
             Controls.Add(button1);
             Name = "BookTrip";
             Text = "BookTrip";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -220,20 +204,16 @@
 
         private Button button1;
         private Button button2;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
+        private TextBox PickUpAddBox;
+        private TextBox TimeBox;
+        private TextBox DateBox;
+        private TextBox DropOffAddBox;
         private Label label1;
         private Label label2;
-        private Label label3;
-        private Label label4;
         private Label label5;
         private Label label6;
         private Label label7;
-        private ListBox listBox1;
+        private ComboBox comboBox1;
+        private PictureBox pictureBox1;
     }
 }
