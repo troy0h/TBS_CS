@@ -66,7 +66,7 @@ namespace TBS_CS
                 return;
             }
             // If none fail, then attempt to make the type
-            SQL.CreateTrip(PickUpAddBox.Text, DropOffAddBox.Text, TimeBox.Text, id);
+            SQL.CreateTrip(PickUpAddBox.Text, DropOffAddBox.Text, TimeBox.Text, comboBox1.Text, id);
         }        
     }
 }
