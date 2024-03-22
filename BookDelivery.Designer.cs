@@ -57,7 +57,7 @@
             ResumeLayout(false);
         }
 
-        #endregion
+        #endregion 
 
         private PictureBox pictureBox1;
     }
