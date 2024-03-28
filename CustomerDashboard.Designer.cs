@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerDashboard));
             CustomerBook = new Button();
             CustomerView = new Button();
-            CustomerDelivery = new Button();
             logout = new Button();
             pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -57,16 +56,7 @@
             CustomerView.TabIndex = 2;
             CustomerView.Text = "View Trips";
             CustomerView.UseVisualStyleBackColor = true;
-            // 
-            // CustomerDelivery
-            // 
-            CustomerDelivery.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CustomerDelivery.Location = new Point(392, 245);
-            CustomerDelivery.Name = "CustomerDelivery";
-            CustomerDelivery.Size = new Size(240, 75);
-            CustomerDelivery.TabIndex = 3;
-            CustomerDelivery.Text = "Book Delivery";
-            CustomerDelivery.UseVisualStyleBackColor = true;
+            CustomerView.Click += CustomerView_Click;
             // 
             // logout
             // 
@@ -98,7 +88,6 @@
             ClientSize = new Size(1008, 729);
             Controls.Add(pictureBox1);
             Controls.Add(logout);
-            Controls.Add(CustomerDelivery);
             Controls.Add(CustomerView);
             Controls.Add(CustomerBook);
             Name = "CustomerDashboard";
@@ -111,7 +100,6 @@
 
         private Button CustomerBook;
         private Button CustomerView;
-        private Button CustomerDelivery;
         private Button logout;
         private PictureBox pictureBox1;
     }

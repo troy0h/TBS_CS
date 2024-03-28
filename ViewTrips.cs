@@ -19,6 +19,22 @@ namespace TBS_CS
             this.id = id;
         }
 
+        private void ViewTrips_Load(object sender, EventArgs e)
+        {
+            List<string> UserTrips = SQL.GetUserTrips(this.id);
+            foreach (var trip in UserTrips)
+            {
+                CustomerBookings.Items.Add(trip);
+            }
+        }
+
+        private void cancelbooking_Click(object sender, EventArgs e)
+        {
+            string text = CustomerBookings.SelectedItem.ToString();
+            string[] textArray = text.Split(", ");
+            SQL.DeleteTrip(textArray[1]);
+        }
+
         private void back_Click(object sender, EventArgs e)
         {
             Form form = new CustomerDashboard(id);

@@ -90,6 +90,7 @@
             Controls.Add(CustomerBookings);
             Name = "ViewTrips";
             Text = "ViewTrips";
+            Load += ViewTrips_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }

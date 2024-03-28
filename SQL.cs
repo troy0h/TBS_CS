@@ -150,7 +150,7 @@ namespace TBS_CS
                 createTrip.Parameters.AddWithValue("@dropoff", dropoffAddress);
                 createTrip.Parameters.AddWithValue("@time", pickupTime);
                 createTrip.Parameters.AddWithValue("@car", carType);
-                createTrip.Parameters.AddWithValue("@cust", customerId);
+                createTrip.Parameters.AddWithValue("@cust", 1);
                 createTrip.ExecuteNonQuery();
                 connection.Close();
             }
@@ -266,9 +266,9 @@ namespace TBS_CS
                 List<string> toReturn = new();
                 SqliteCommand GetTrips = connection.CreateCommand();
                 GetTrips.CommandText = @"SELECT * FROM trips WHERE customerID = @user;";
-                GetTrips.Parameters.AddWithValue("@user", userId);
+                GetTrips.Parameters.AddWithValue("@user", 1);
                 SqliteDataReader reader = GetTrips.ExecuteReader();
-                while (reader.Read())
+                while(reader.Read())
                 {
                     StringBuilder stringBuilder = new StringBuilder();
                     stringBuilder.Append(reader.GetString(1));
@@ -276,10 +276,26 @@ namespace TBS_CS
                     stringBuilder.Append(reader.GetString(2));
                     stringBuilder.Append(", ");
                     stringBuilder.Append(reader.GetString(3));
+                    stringBuilder.Append(", ");
+                    stringBuilder.Append(reader.GetString(4));
                     toReturn.Add(stringBuilder.ToString());
                 }
                 connection.Close();
                 return toReturn;
+            }
+        }
+
+        public static void DeleteTrip(string pickup)
+        {
+            using (SqliteConnection connection = new SqliteConnection("Data Source=database.db"))
+            {
+                connection.Open();
+                SqliteCommand DeleteTrip = connection.CreateCommand();
+                DeleteTrip.CommandText = @"DELETE FROM trips WHERE pickupAdd = @pickup";
+                DeleteTrip.Parameters.AddWithValue("@pickup", pickup);
+                DeleteTrip.ExecuteNonQuery();
+                connection.Close();
+                return;
             }
         }
     }
