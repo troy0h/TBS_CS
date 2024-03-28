@@ -199,7 +199,7 @@
             PerformLayout();
         }
 
-        #endregion
+        #endregion 
 
         private PictureBox pictureBox1;
         private ComboBox comboBox1;
